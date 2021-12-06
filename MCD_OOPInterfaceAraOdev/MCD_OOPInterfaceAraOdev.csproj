@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FastPayOdeme.cs" />
     <Compile Include="IOdeme.cs" />
     <Compile Include="Odeme.cs" />
     <Compile Include="Program.cs" />
