@@ -46,6 +46,7 @@
     <Compile Include="FastPayOdeme.cs" />
     <Compile Include="IOdeme.cs" />
     <Compile Include="KapidaOdeme.cs" />
+    <Compile Include="KrediKartiOdeme.cs" />
     <Compile Include="Odeme.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
