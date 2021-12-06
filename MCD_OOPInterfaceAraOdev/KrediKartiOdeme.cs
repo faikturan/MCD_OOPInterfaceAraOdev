@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace MCD_OOPInterfaceAraOdev
 {
@@ -50,12 +51,38 @@ namespace MCD_OOPInterfaceAraOdev
 
         public void OdemeSekliAyariYap()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Kredi Karı --> 1");
         }
 
         public void OdemeYap()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Kart Sahibinin Adı: ");
+            KartSahibiAd = Console.ReadLine();
+            Console.WriteLine("Kart Sahibinin Soyadı: ");
+            KartSahibiSoyad = Console.ReadLine();
+
+            Console.WriteLine("16 haneli Kart Numarasını Giriniz: ");
+            KartNumarasi = Console.ReadLine();
+            Console.WriteLine("Kartınızın son kullanım ay bilgisini 1-12 arasında sayı olarak giriniz: ");
+            SonKullanimAy = Convert.ToByte(Console.ReadLine());
+
+            Console.WriteLine("Kartınızın son kullanım bilgilerinden yıl bilgisini 20XX formatunda giriniz: ");
+            SonKullanimYili = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("CVV bilgisini giriniz: ");
+            CVV = Convert.ToInt16(Console.ReadLine());
+
+            //kartnumarası boş olmamalı ve diğer özelliklerde boş olmamalı encapsulation yap.
+            //Bu if' in içindeki koşulları encapsulation ile gerçekleştiriniz.
+            //Biz çok vakit harcamamak için if ile yazıp geçmek istedik.
+            if (KartSahibiAd.Length > 0 && KartSahibiSoyad.Length > 0 && SonKullanimAy > 0 && SonKullanimAy < 13 && SonKullanimYili >= DateTime.Now.Year)
+            {
+                Console.Clear();
+                Console.WriteLine($"Sayın {KartSahibiAd} {KartSahibiSoyad} {OdenecekTutar} lira ödeniyor...Lütfen bekleyiniz...");
+                Random rnd = new Random();
+                int bekleme = rnd.Next(3000, 5000);
+                Thread.Sleep(bekleme);
+                Console.WriteLine("Ödeme alındı...");
+            }
         }
     }
 }
