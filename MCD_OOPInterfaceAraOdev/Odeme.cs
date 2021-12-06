@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace MCD_OOPInterfaceAraOdev
 {
-    class Odeme
+    public class Odeme
     {
+        public decimal OdenecekTutar { get; set; }
+
+        public void OdenecekTutariKullanicidanAl()
+        {
+            Console.WriteLine("\n");
+            Console.WriteLine("Ödenecek Tutarı Giriniz:");
+            OdenecekTutar = Convert.ToDecimal(Console.ReadLine());
+
+        }
+
     }
 }
